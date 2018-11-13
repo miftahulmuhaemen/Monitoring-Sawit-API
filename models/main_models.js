@@ -45,27 +45,5 @@ class prodi {
       callback(err_message,result)
     })
   }
-  //
-  // updateOne(id,nama_prodi,callback){
-  //   connection.query('UPDATE db_sawit SET nama_prodi = ? WHERE id = ?', {nama,id}, function(error, result) {
-  //
-  //     var err_message = null;
-  //     if(error)
-  //       err_message = error.sqlMessage
-  //
-  //     callback(err_message,result)
-  //   })
-  // }
-  //
-  // deleteOne(id,callback){
-  //   connection.query('DELETE FROM db_sawit WHERE id = ?', {id}, function(error, result) {
-  //
-  //     var err_message = null;
-  //     if(error)
-  //       err_message = error.sqlMessage
-  //
-  //     callback(err_message,result)
-  //   })
-  // }
 }
 module.exports = prodi;
