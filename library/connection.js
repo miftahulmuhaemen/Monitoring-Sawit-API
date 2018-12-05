@@ -16,7 +16,7 @@ let config = mysql.createConnection({
     password: process.env.DB_PASS
 });
 
-config.socketPath = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}`;
+config.socketPath = `/cloudsql/${process.env.DB_INSTANCE_NAME}`;
 
 
 var connection = mysql.createConnection(config);
