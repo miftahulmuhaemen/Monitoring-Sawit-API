@@ -12,8 +12,7 @@ var connection = mysql.createConnection({
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
     database: process.env.DB_DATABASE,
-    password: process.env.DB_PASS,
-    socketPath : '/cloudsql/${process.env.DB_INSTANCE_NAME'
+    password: process.env.DB_PASS
 });
 
 connection.connect(function (err) {
