@@ -1,7 +1,8 @@
 var mysql = require('mysql');
 require('dotenv').config();
 
-var connection = mysql.createConnection({
+
+let config = mysql.createConnection({
     // host: '127.0.0.1',
     // port: 3306,
     // user: 'root',
@@ -14,6 +15,11 @@ var connection = mysql.createConnection({
     database: process.env.DB_DATABASE,
     password: process.env.DB_PASS
 });
+
+config.socketPath = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}`;
+
+
+var connection = mysql.createConnection(config);
 
 connection.connect(function (err) {
     if(err) throw err;
