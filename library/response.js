@@ -12,10 +12,11 @@ response.ok = function (value,res) {
   res.end()
 }
 
+
 response.not_found = function (res) {
   var data = {
     'status' : 404,
-    'message' : "Data Not Found mofo!",
+    'message' : "Data Not Found!",
     'data' : null
   }
 

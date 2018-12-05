@@ -1,17 +1,23 @@
 var mysql = require('mysql');
+require('dotenv').config();
 
 var connection = mysql.createConnection({
-    host: 'sql12.freesqldatabase.com',
-    port:3306,
-    user: 'sql12265328',
-    password: '5KnYvgyqNU',
-    database: 'sql12265328'
+    // host: '127.0.0.1',
+    // port: 3306,
+    // user: 'root',
+    // password: '12345678',
+    // database: 'sawit'
+    
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    database: process.env.DB_DATABASE,
+    password: process.env.DB_PASS,
+    socketPath : '/cloudsql/${process.env.DB_INSTANCE_NAME'
 });
 
 connection.connect(function (err) {
     if(err) throw err;
 });
-
-
 
 module.exports = connection;
