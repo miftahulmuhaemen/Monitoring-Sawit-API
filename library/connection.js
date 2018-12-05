@@ -17,11 +17,12 @@ let config = mysql.createConnection({
     socketPath : '/cloudsql/${process.env.DB_INSTANCE_NAME}`'
 });
 
-console.log(config)
-
-
-
 var connection = mysql.createConnection(config);
+
+connection.connect(function (err) {
+    if(err) throw err;
+});
+
 
 connection.connect(function (err) {
     if(err) throw err;
